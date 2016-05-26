@@ -5,11 +5,5 @@ Coveralls.wear!
 
 require 'minitest/autorun'
 
-require 'wrong'
-require 'wrong/adapters/minitest'
-
-Wrong.config.color
-
 class Minitest::Test
-  include Wrong
 end
