@@ -1,0 +1,23 @@
+{
+  "Unit Tests": {
+    "coverage": {
+    },
+    "timestamp": 1464256660
+  },
+  "MiniTest": {
+    "coverage": {
+      "/Users/avk1/p/restream-study/7r41n33/task_1/solution.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1464258190
+  }
+}
