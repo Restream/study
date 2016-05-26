@@ -1,4 +1,4 @@
-require './test_helper.rb'
+require './test/test_helper.rb'
 require_relative './solution.rb'
 
 class User7r41n33::Task1::Test < Minitest::Test
