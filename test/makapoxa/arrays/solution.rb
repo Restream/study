@@ -1,7 +1,7 @@
-module User7r41n33
+module Makapoxa
   module Arrays
     class << self
-      def swap_min_max(array)
+      def min_repeat(array)
         array
       end
 

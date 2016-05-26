@@ -1,7 +1,7 @@
-module User7r41n33
+module Vmaxes
   module Arrays
     class << self
-      def swap_min_max(array)
+      def replace(array)
         array
       end
 
