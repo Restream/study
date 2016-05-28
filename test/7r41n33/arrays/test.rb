@@ -4,7 +4,6 @@ require_relative './solution.rb'
 class User7r41n33::ArraysTest < Minitest::Test
   # Поменять местами минимальный и максимальный элементы массива
   def test_swap
-    skip
     array = [3, 2, 8, 4, 1, 6, 7, 8, 9]
     new_array = User7r41n33::Arrays.swap_min_max(array)
 
@@ -14,7 +13,6 @@ class User7r41n33::ArraysTest < Minitest::Test
   # Реализовать бинарный поиск
   # Функция должна возвращать индекс элемента
   def test_bin_search
-    skip
     assert User7r41n33::Arrays.search([1], 900) == -1
     assert User7r41n33::Arrays.search([1], 1) == 0
     assert User7r41n33::Arrays.search([], 900) == -1
