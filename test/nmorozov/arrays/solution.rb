@@ -2,28 +2,26 @@ module Nmorozov
   module Arrays
     class << self
       def replace(array)
-        array.map { |e| e > 0 ? array.max : e }
+        array_max = array.max
+        array.map { |e| e > 0 ? array_max : e }
       end
 
       def search(array, query)
         index = -1
 
-        unless (array.empty?)
-          bottom = 0
-          top = array.length
+        return index if array.empty?
 
-          while bottom < top do
-            mid = bottom + (top - bottom) / 2
-            if query == array[mid]
-              index = mid
-              break
-            else
-              if query < array[mid]
-                top = mid
-              else
-                bottom = mid + 1
-              end
-            end
+        bottom = 0
+        top = array.length
+
+        while bottom < top do
+          mid = bottom + (top - bottom) / 2
+          if query == array[mid]
+            return mid
+          elsif query < array[mid]
+            top = mid
+          else
+            bottom = mid + 1
           end
         end
 
