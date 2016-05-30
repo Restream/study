@@ -4,8 +4,6 @@ require_relative './solution.rb'
 class Makapoxa::ArraysTest < Minitest::Test
   # Найти длинну минимального промежутка с повторяющимися значениями
   def test_min_repeat
-    skip
-
     assert Makapoxa::Arrays.min_repeat([1]) == 0
     assert Makapoxa::Arrays.min_repeat([1, 1]) == 2
     assert Makapoxa::Arrays.min_repeat([1, 1, 2, 2, 2, 4, 5, 6, 6, 6, 6, 1, 3, 4, 5, 5]) == 2
@@ -14,7 +12,6 @@ class Makapoxa::ArraysTest < Minitest::Test
   # Реализовать бинарный поиск
   # Функция должна возвращать индекс элемента
   def test_bin_search
-    skip
     assert Makapoxa::Arrays.search([1], 900) == -1
     assert Makapoxa::Arrays.search([1], 1) == 0
     assert Makapoxa::Arrays.search([], 900) == -1
