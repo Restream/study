@@ -7,6 +7,7 @@
 ```
 bundle install
 bundle exec rake test
+bundle exec rubocop
 ```
 
 ## Задача
