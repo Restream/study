@@ -10,8 +10,9 @@ class Hitin::ArraysTest < Minitest::Test
 
     assert Hitin::Arrays.move(array, 0) == array
     assert Hitin::Arrays.move(array, 9) == array
-    assert Hitin::Arrays.move(array, 1) == [ 8, 3, 4, 6, 4, 1, 1, 1, 7  ]
-    assert Hitin::Arrays.move(array, 3) == [ 1, 7, 8, 3, 4, 6, 4, 1, 1  ]
+    assert Hitin::Arrays.move(array, 1) == [ 8, 3, 4, 6, 4, 1, 1, 1, 7 ]
+    assert Hitin::Arrays.move(array, 3) == [ 1, 7, 8, 3, 4, 6, 4, 1, 1 ]
+    assert Hitin::Arrays.move(array, 20) == [ 7, 8, 3, 4, 6, 4, 1, 1, 1 ]
   end
 
   # Реализовать бинарный поиск
