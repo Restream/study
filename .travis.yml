@@ -5,3 +5,5 @@ before_install: gem install bundler -v 1.10.5
 env:
   - TESTFOLDER=./
 script: bundle exec rake -t
+notifications:
+  slack: restream-study:vR2H907pZnF4GOMkOsPM1V58
