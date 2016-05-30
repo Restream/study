@@ -3,12 +3,11 @@ require './test/test_helper.rb'
 require_relative './solution.rb'
 
 class User7r41n33::FpTest < Minitest::Test
-
   # Написать функцию расчета среднего рейтинга кинопоиска всех фильмов за заданный год.
   # Фильмы у которых рейтиг не задан или равен 0 не учитывать в расчете среднего.
   def test_rating
     skip
-    array = CSV.readlines('./test/fixtures/films.csv', { headers: true })
+    array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = User7r41n33::Fp.rating(array, 2016)
     assert result == 5.473684210526316
@@ -21,7 +20,7 @@ class User7r41n33::FpTest < Minitest::Test
   # с заданным возрастным ограничением.
   def test_chars_count
     skip
-    array = CSV.readlines('./test/fixtures/films.csv', { headers: true })
+    array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = User7r41n33::Fp.chars_count(array, '18+')
     assert result == 203
