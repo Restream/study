@@ -2,32 +2,25 @@ module Makapoxa
   module Arrays
     class << self
       def min_repeat(array)
-        return 0 if array.length < 2
-        res = []
-        temp = [array.first]
+        current_chain = 1
+        min_chain = array.length
         array.each_with_index do |value, index|
-          next if index.zero?
-          if (value == array[index - 1])
-            temp << value
-          else
-            if temp.length > 1
-              res << temp
-            end
-            temp = [value]
+          if value == array[index - 1]
+            current_chain += 1
+            next
           end
+          min_chain = current_chain if (min_chain > current_chain) && (current_chain != 1)
+          current_chain = 1
         end
-        if temp.length > 1
-          res << temp
-        end
-        res.min{|a, b| a.length <=> b.length}.length
+        return 0 if min_chain == 1
+        min_chain
       end
 
       def search(array, query, left = 0, right = array.length - 1)
         return -1 if left > right
         mid = (left + right) / 2
-        if array[mid] == query
-          return mid
-        elsif array[mid] > query
+        return mid if array[mid] == query
+        if array[mid] > query
           right = mid - 1
         else
           left = mid + 1
