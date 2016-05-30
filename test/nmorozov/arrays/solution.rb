@@ -14,11 +14,11 @@ module Nmorozov
         bottom = 0
         top = array.length
 
-        while bottom < top do
+        while bottom < top
           mid = bottom + (top - bottom) / 2
-          if query == array[mid]
-            return mid
-          elsif query < array[mid]
+          return mid if query == array[mid]
+
+          if query < array[mid]
             top = mid
           else
             bottom = mid + 1

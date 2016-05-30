@@ -2,17 +2,16 @@ require './test/test_helper.rb'
 require_relative './solution.rb'
 
 class Hitin::ArraysTest < Minitest::Test
-
   # Осуществить сдвиг элементов массива вправо на N позиций.
   def test_move
     skip
-    array = [ 3, 4, 6, 4, 1, 1, 1, 7, 8 ]
+    array = [3, 4, 6, 4, 1, 1, 1, 7, 8]
 
     assert Hitin::Arrays.move(array, 0) == array
     assert Hitin::Arrays.move(array, 9) == array
-    assert Hitin::Arrays.move(array, 1) == [ 8, 3, 4, 6, 4, 1, 1, 1, 7 ]
-    assert Hitin::Arrays.move(array, 3) == [ 1, 7, 8, 3, 4, 6, 4, 1, 1 ]
-    assert Hitin::Arrays.move(array, 20) == [ 7, 8, 3, 4, 6, 4, 1, 1, 1 ]
+    assert Hitin::Arrays.move(array, 1) == [8, 3, 4, 6, 4, 1, 1, 1, 7]
+    assert Hitin::Arrays.move(array, 3) == [1, 7, 8, 3, 4, 6, 4, 1, 1]
+    assert Hitin::Arrays.move(array, 20) == [7, 8, 3, 4, 6, 4, 1, 1, 1]
   end
 
   # Реализовать бинарный поиск

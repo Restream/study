@@ -2,14 +2,13 @@ require './test/test_helper.rb'
 require_relative './solution.rb'
 
 class User7r41n33::ArraysTest < Minitest::Test
-
   # Поменять местами минимальный и максимальный элементы массива
   def test_swap
     skip
-    array = [ 3, 2, 8, 4, 1, 6, 7, 8, 9 ]
+    array = [3, 2, 8, 4, 1, 6, 7, 8, 9]
     new_array = User7r41n33::Arrays.swap_min_max(array)
 
-    assert new_array == [ 3, 2, 8, 4, 9, 6, 7, 8, 1 ]
+    assert new_array == [3, 2, 8, 4, 9, 6, 7, 8, 1]
   end
 
   # Реализовать бинарный поиск

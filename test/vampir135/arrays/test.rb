@@ -2,14 +2,13 @@ require './test/test_helper.rb'
 require_relative './solution.rb'
 
 class Vampir135::ArraysTest < Minitest::Test
-
   # Заменить все положительные элементы целочисленного массива на максимальное значение элементов массива.
   def test_replace
     skip
-    array = [ 3, 2, -8, 4, 100, -6, 7, 8, -99 ]
+    array = [3, 2, -8, 4, 100, -6, 7, 8, -99]
     new_array = Vampir135::Arrays.replace(array)
 
-    assert new_array == [ 100, 100, -8, 100, 100, -6, 100, 100, -99 ]
+    assert new_array == [100, 100, -8, 100, 100, -6, 100, 100, -99]
   end
 
   # Реализовать бинарный поиск

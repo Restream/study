@@ -2,13 +2,12 @@ require './test/test_helper.rb'
 require_relative './solution.rb'
 
 class Amxsv::ArraysTest < Minitest::Test
-
   # Заменить все отрицательные элементы целочисленного массива на минимальное значение элементов массива.
   def test_replace
-    array = [ 3, 2, -8, 4, 1, -6, 7, 8, -99 ]
+    array = [3, 2, -8, 4, 1, -6, 7, 8, -99]
     new_array = Amxsv::Arrays.replace(array)
 
-    assert new_array == [ 3, 2, -99, 4, 1, -99, 7, 8, -99 ]
+    assert new_array == [3, 2, -99, 4, 1, -99, 7, 8, -99]
   end
 
   # Реализовать бинарный поиск

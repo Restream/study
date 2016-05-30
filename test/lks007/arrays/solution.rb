@@ -5,7 +5,7 @@ module Lks007
         array
       end
 
-      def search(array, query)
+      def search(_array, _query)
         0
       end
     end

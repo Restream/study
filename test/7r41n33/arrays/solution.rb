@@ -5,7 +5,7 @@ module User7r41n33
         array
       end
 
-      def search(array, query)
+      def search(_array, _query)
         0
       end
     end
