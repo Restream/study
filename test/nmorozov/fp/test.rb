@@ -10,7 +10,7 @@ class Nmorozov::FpTest < Minitest::Test
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Nmorozov::Fp.rating(array)
-    assert result == 5.887096774193548
+    assert result == 6.101823708206687
   end
 
   # Посчитать количесвто букв 'в' в названиях всех фильмов с рейтингом imdb больше или равным заданному значению
