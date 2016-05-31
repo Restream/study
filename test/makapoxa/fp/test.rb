@@ -10,10 +10,10 @@ class Makapoxa::FpTest < Minitest::Test
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Makapoxa::Fp.rating(array, 'Франция')
-    assert result == 6.086666666666667
+    assert result == 6.563999999999998
 
     result = Makapoxa::Fp.rating(array, 'США')
-    assert result == 6.058327932598833
+    assert result == 6.509462086843813
   end
 
   # Посчитать количесвто точек в названиях всех фильмов за определенный год

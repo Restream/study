@@ -10,7 +10,7 @@ class Vampir135::FpTest < Minitest::Test
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Vampir135::Fp.rating(array)
-    assert result == 5.483870967741935
+    assert result == 6.809410385259628
   end
 
   # Посчитать количесвто букв 'и' в названиях всех фильмов с рейтингом кинопоиска больше или равным заданному значению

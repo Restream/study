@@ -10,10 +10,10 @@ class Amxsv::FpTest < Minitest::Test
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Amxsv::Fp.rating(array, '18+')
-    assert result == 5.555555555555555
+    assert result == 6.0135555555555555
 
     result = Amxsv::Fp.rating(array, '0+')
-    assert result == 6.008823529411765
+    assert result == 6.464402941176473
   end
 
   # Посчитать количесвто букв 'б' (учитывая регистр) в названиях всех фильмов за определенный год

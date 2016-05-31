@@ -10,10 +10,10 @@ class User7r41n33::FpTest < Minitest::Test
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = User7r41n33::Fp.rating(array, 2016)
-    assert result == 5.473684210526316
+    assert result == 5.891394736842104
 
     result = User7r41n33::Fp.rating(array, 2000)
-    assert result == 6.8125
+    assert result == 7.4038125
   end
 
   # Посчитать количесвто букв 'а' (учитывая регистр) в названиях всех фильмов

@@ -10,10 +10,10 @@ class Lks007::FpTest < Minitest::Test
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Lks007::Fp.rating(array, '18+')
-    assert result == 5.0
+    assert result == 5.477777777777778
 
     result = Lks007::Fp.rating(array, '0+')
-    assert result == 6.067235159068547
+    assert result == 6.529878648737269
   end
 
   # Посчитать количесвто цифр в названиях всех фильмов за определенный год

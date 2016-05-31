@@ -10,10 +10,10 @@ class Vmaxes::FpTest < Minitest::Test
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Vmaxes::Fp.rating(array, '16+')
-    assert result == 2.0
+    assert result == 2.179
 
     result = Vmaxes::Fp.rating(array, '0+')
-    assert result == 6.008823529411765
+    assert result == 6.464402941176473
   end
 
   # Вычислить по странам сколько фильмов было снято за определенный год
