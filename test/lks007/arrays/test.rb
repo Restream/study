@@ -7,6 +7,7 @@ class Lks007::ArraysTest < Minitest::Test
     skip
 
     assert Lks007::Arrays.max_repeat([1]) == 0
+    assert Lks007::Arrays.max_repeat([1, 2]) == 0
     assert Lks007::Arrays.max_repeat([1, 1]) == 2
     assert Lks007::Arrays.max_repeat([1, 1, 2, 2, 2, 4, 5, 6, 6, 6, 6, 1, 3, 4, 5, 5]) == 4
     assert Lks007::Arrays.max_repeat([1, 1, nil, nil, nil, 4, 5, 6, 8, 6, 60, 1, 3, 4, 5, 5]) == 3
