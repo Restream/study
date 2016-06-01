@@ -19,9 +19,9 @@ class Nmorozov::FpTest < Minitest::Test
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Nmorozov::Fp.chars_count(array, 5)
-    assert result == 1032
+    assert result == 1820
 
     result = Nmorozov::Fp.chars_count(array, 8.5)
-    assert result == 22
+    assert result == 23
   end
 end
