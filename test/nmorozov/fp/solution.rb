@@ -18,7 +18,7 @@ module Nmorozov
 
         films.select { |film| film['rating_imdb'].to_f >= threshold.to_f }
              .map { |film| film['name'] }
-             .reduce(0) { |a, e| a + e.scan(/[Вв]/).length }
+             .reduce(0) { |a, e| a + e.scan('в').length }
       end
     end
   end
