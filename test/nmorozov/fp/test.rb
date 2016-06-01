@@ -6,7 +6,6 @@ class Nmorozov::FpTest < Minitest::Test
   # Посчитать средний рейтинг фильмов по версии imdb у которых две или больше стран
   # Фильмы у которых рейтиг не задан или равен 0 не учитывать в расчете среднего.
   def test_rating
-    skip
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Nmorozov::Fp.rating(array)
@@ -15,7 +14,6 @@ class Nmorozov::FpTest < Minitest::Test
 
   # Посчитать количесвто букв 'в' в названиях всех фильмов с рейтингом imdb больше или равным заданному значению
   def test_chars_count
-    skip
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Nmorozov::Fp.chars_count(array, 5)
