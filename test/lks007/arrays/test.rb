@@ -4,8 +4,6 @@ require_relative './solution.rb'
 class Lks007::ArraysTest < Minitest::Test
   # Найти длинну максимального промежутка с повторяющимися значениями
   def test_max_repeat
-    skip
-
     assert Lks007::Arrays.max_repeat([1]) == 0
     assert Lks007::Arrays.max_repeat([1, 2]) == 0
     assert Lks007::Arrays.max_repeat([1, 1]) == 2
@@ -16,7 +14,6 @@ class Lks007::ArraysTest < Minitest::Test
   # Реализовать бинарный поиск
   # Функция должна возвращать индекс элемента
   def test_bin_search
-    skip
     assert Lks007::Arrays.search([1], 900) == -1
     assert Lks007::Arrays.search([1], 1) == 0
     assert Lks007::Arrays.search([], 900) == -1
