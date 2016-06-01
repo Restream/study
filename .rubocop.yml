@@ -46,3 +46,6 @@ Style/RegexpLiteral:
 
 Style/AsciiComments:
   Enabled: false
+
+Style/For:
+  Enabled: false
