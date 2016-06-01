@@ -6,7 +6,6 @@ class User7r41n33::FpTest < Minitest::Test
   # Написать функцию расчета среднего рейтинга кинопоиска всех фильмов за заданный год.
   # Фильмы у которых рейтиг не задан или равен 0 не учитывать в расчете среднего.
   def test_rating
-    skip
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = User7r41n33::Fp.rating(array, 2016)
@@ -19,7 +18,6 @@ class User7r41n33::FpTest < Minitest::Test
   # Посчитать количесвто букв 'а' (учитывая регистр) в названиях всех фильмов
   # с заданным возрастным ограничением.
   def test_chars_count
-    skip
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = User7r41n33::Fp.chars_count(array, '18+')
