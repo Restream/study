@@ -4,9 +4,7 @@ require_relative './solution.rb'
 class Hitin::ArraysTest < Minitest::Test
   # Осуществить сдвиг элементов массива вправо на N позиций.
   def test_move
-    skip
     array = [3, 4, 6, 4, 1, 1, 1, 7, 8]
-
     assert Hitin::Arrays.move(array, 0) == array
     assert Hitin::Arrays.move(array, 9) == array
     assert Hitin::Arrays.move(array, 1) == [8, 3, 4, 6, 4, 1, 1, 1, 7]
@@ -17,7 +15,6 @@ class Hitin::ArraysTest < Minitest::Test
   # Реализовать бинарный поиск
   # Функция должна возвращать индекс элемента
   def test_bin_search
-    skip
     assert Hitin::Arrays.search([1], 900) == -1
     assert Hitin::Arrays.search([1], 1) == 0
     assert Hitin::Arrays.search([], 900) == -1
