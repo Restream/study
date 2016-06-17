@@ -5,3 +5,6 @@ gem 'rake'
 gem 'minitest'
 gem 'coveralls', require: false
 gem 'rubocop', require: false
+gem 'rack'
+gem 'test-unit'
+gem 'rack-test'
