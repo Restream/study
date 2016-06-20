@@ -1,3 +1,3 @@
-require File.expand_path('solution.rb', File.dirname(__FILE__))
+require './solution'
 
 run Makapoxa::RackArrays

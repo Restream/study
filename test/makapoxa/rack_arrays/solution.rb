@@ -1,45 +1,36 @@
+require_relative '../arrays/solution'
+require 'json'
+
 module Makapoxa
   module RackArrays
     class << self
       def call(env)
-        request = Rack::Request.new env
+        req = Rack::Request.new(env)
+        array = req.params['array']
+        q = req.params['q']
+        errors = []
+        errors << 'array is missing' if array.nil?
+        errors << 'q is missing' if q.nil?
 
-        array = request.params['array'].split(',').map(&:to_i) if request.params['array']
+        result = {}
 
-        if request.params['method'] == 'min_repeat'
-          [200, {}, [min_repeat(array || []).to_s]]
-        elsif request.params['method'] == 'search'
-          [200, {}, [search(array || [], request.params['query'].to_i).to_s]]
+        unless errors.empty?
+          result[:status] = 422
+          result[:errors] = errors
+          return [result[:status], { 'Content-Type' => 'application/json' }, [result.to_json]]
+        end
+        index = Makapoxa::Arrays.search(array.map(&:to_i), q.to_i)
+        if index == -1
+          result[:status] = 404
+          result[:errors] = "#{q} not found in [#{array.join(', ')}]"
         else
-          [200, {}, ['specify method and args']]
+          result[:status] = 200
+          result[:array] = array
+          result[:q] = q
+          result[:index] = index
         end
-      end
 
-      def min_repeat(array)
-        current_chain = 1
-        min_chain = array.length
-        array.each_with_index do |value, index|
-          if value == array[index - 1]
-            current_chain += 1
-            next
-          end
-          min_chain = current_chain if (min_chain > current_chain) && (current_chain != 1)
-          current_chain = 1
-        end
-        return 0 if min_chain == 1
-        min_chain
-      end
-
-      def search(array, query, left = 0, right = array.length - 1)
-        return -1 if left > right
-        mid = (left + right) / 2
-        return mid if array[mid] == query
-        if array[mid] > query
-          right = mid - 1
-        else
-          left = mid + 1
-        end
-        search(array, query, left, right)
+        [result[:status], { 'Content-Type' => 'application/json' }, [result.to_json]]
       end
     end
   end

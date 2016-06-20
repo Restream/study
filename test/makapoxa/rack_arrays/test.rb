@@ -1,7 +1,7 @@
 require './test/test_helper.rb'
 require_relative './solution.rb'
 
-class Makapoxa::ArraysTest < Minitest::Test
+class Makapoxa::RakeArraysTest < Minitest::Test
   # Найти длинну минимального промежутка с повторяющимися значениями
   def test_min_repeat
     assert Makapoxa::Arrays.min_repeat([1]) == 0
