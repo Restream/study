@@ -1,4 +1,4 @@
-module Vampir135
+module Nutsoriginal
   module Fp
     class << self
       # Обратиться к параметрам фильма можно так:

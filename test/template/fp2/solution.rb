@@ -1,4 +1,4 @@
-module Vampir135
+module Template
   module Fp2
     class MyArray < Array
       # Использовать стандартные функции массива для решения задач нельзя.

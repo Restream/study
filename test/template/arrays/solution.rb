@@ -1,4 +1,4 @@
-module Vampir135
+module Template
   module Arrays
     class << self
       def replace(array)

@@ -1,4 +1,4 @@
-module Vampir135
+module Nutsoriginal
   module Arrays
     class << self
       def replace(array)
