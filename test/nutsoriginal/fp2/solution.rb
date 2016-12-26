@@ -26,16 +26,14 @@ module Nutsoriginal
       end
 
       # Написать свою функцию my_reduce
-      def my_reduce(acc = nil, &block)
+      def my_reduce(acc = nil, &_block)
         if acc.nil?
           acc = first
           skip_frst = true
         end
         i = 0
         my_each do |element|
-          unless skip_frst && i == 0
-            acc = block.call(acc, element)
-          end
+          acc = yield(acc, element) unless skip_frst && i.zero?
           i += 1
         end
         acc
