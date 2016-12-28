@@ -5,8 +5,8 @@ module Nutsoriginal
       # Использовать свои написанные функции для реализации следующих - можно.
 
       def my_each
-        for ind in 0..(length - 1)
-          yield(self[ind])
+        for index in 0..(length - 1)
+          yield(self[index])
         end
         self
       end
@@ -29,12 +29,16 @@ module Nutsoriginal
       def my_reduce(acc = nil, &_block)
         if acc.nil?
           acc = first
-          skip_frst = true
+          skip_first = true
         end
-        i = 0
+
+        marker = nil
         my_each do |element|
-          acc = yield(acc, element) unless skip_frst && i.zero?
-          i += 1
+          if skip_first && marker.nil?
+            marker = true
+          else
+            acc = yield(acc, element)
+          end
         end
         acc
       end

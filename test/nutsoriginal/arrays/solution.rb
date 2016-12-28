@@ -10,18 +10,18 @@ module Nutsoriginal
       # Реализовать бинарный поиск
       # Функция должна возвращать индекс элемента
       def search(array, query)
-        ind = 0
+        index = 0
         len = array.length
-        while (len - ind) > 1
-          mid = (ind + len) / 2
+        while (len - index) > 1
+          mid = (index + len) / 2
           if query < array[mid]
             len = mid
           else
-            ind = mid
+            index = mid
           end
         end
-        if array[ind] == query
-          ind
+        if array[index] == query
+          index
         else
           -1
         end
