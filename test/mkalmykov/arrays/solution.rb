@@ -9,21 +9,21 @@ module Mkalmykov
       def search(array, query)
         return -1 if array.empty?
 
-        left = 0
-        right = array.length
+        left_edge = 0
+        right_edge = array.length
 
-        while right - left > 1
+        while right_edge - left_edge > 1
           # Не учитываем явно случай, когда длина массива - нечетное число,
           # потому что осуществляем целочисленное деление, и результат будет
           # целым числом
-          mid = (left + right) / 2
+          mid = (left_edge + right_edge) / 2
           if query < array[mid]
-            right = mid
+            right_edge = mid
           else
-            left = mid
+            left_edge = mid
           end
         end
-        array[left] == query ? left : -1
+        array[left_edge] == query ? left_edge : -1
       end
     end
   end
