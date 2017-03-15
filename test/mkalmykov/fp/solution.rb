@@ -11,8 +11,10 @@ module Mkalmykov
         required_films.reduce { |a, e| a + e } / required_films.length
       end
 
-      def chars_count(_films, _threshold)
-        0
+      def chars_count(films, threshold)
+        films.reduce(0) do |accum, film|
+          film['rating_kinopoisk'].to_f >= threshold.to_f ? accum + film['name'].count('и') : accum
+        end
       end
     end
   end
