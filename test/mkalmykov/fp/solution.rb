@@ -5,15 +5,19 @@ module Mkalmykov
       # film["name"], film["rating_kinopoisk"], film["rating_imdb"],
       # film["genres"], film["year"], film["access_level"], film["country"]
       def rating(array)
-        required_films = array.select { |film| !film['country'].nil? && film['country'].split(',').length >= 2 && !film['rating_kinopoisk'].to_f.zero? }
-                              .map { |film| film['rating_kinopoisk'].to_f }
+        required_films = array.select do |film|
+          !film['country'].nil? && film['country'].split(',').length >= 2 && !film['rating_kinopoisk'].to_f.zero?
+        end
 
-        required_films.reduce { |a, e| a + e } / required_films.length
+        required_films.map { |film| film['rating_kinopoisk'].to_f }
+                      .reduce(:+) / required_films.length
       end
 
       def chars_count(films, threshold)
+        letter_to_count = 'и'
+
         films.reduce(0) do |accum, film|
-          film['rating_kinopoisk'].to_f >= threshold.to_f ? accum + film['name'].scan(/и/i).length : accum
+          film['rating_kinopoisk'].to_f >= threshold.to_f ? accum + film['name'].scan(/#{letter_to_count}/i).length : accum
         end
       end
     end
