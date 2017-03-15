@@ -14,7 +14,6 @@ class Mkalmykov::FpTest < Minitest::Test
 
   # Посчитать количесвто букв 'и' в названиях всех фильмов с рейтингом кинопоиска больше или равным заданному значению
   def test_chars_count
-    skip
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Mkalmykov::Fp.chars_count(array, 5)
