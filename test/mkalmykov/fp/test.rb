@@ -12,14 +12,14 @@ class Mkalmykov::FpTest < Minitest::Test
     assert result == 6.809410385259628
   end
 
-  # Посчитать количесвто букв 'и' в названиях всех фильмов с рейтингом кинопоиска больше или равным заданному значению
+  # Посчитать количесвто букв 'и', игнорируя регистр в названиях всех фильмов с рейтингом кинопоиска больше или равным заданному значению
   def test_chars_count
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Mkalmykov::Fp.chars_count(array, 5)
-    assert result == 3850
+    assert result == 3966
 
     result = Mkalmykov::Fp.chars_count(array, 8.5)
-    assert result == 40
+    assert result == 42
   end
 end
