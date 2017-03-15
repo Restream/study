@@ -17,9 +17,9 @@ class Mkalmykov::FpTest < Minitest::Test
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Mkalmykov::Fp.chars_count(array, 5)
-    assert result == 891
+    assert result == 3850
 
     result = Mkalmykov::Fp.chars_count(array, 8.5)
-    assert result == 1
+    assert result == 40
   end
 end
