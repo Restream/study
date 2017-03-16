@@ -6,8 +6,15 @@ module Mkalmykov
 
       # Написать свою функцию my_each
       def my_each
-        for element in self
-          yield element
+        if block_given?
+          i = 0
+          while i < length
+            yield self[i]
+            i += 1
+          end
+          self
+        else
+          to_enum :my_each
         end
       end
 
@@ -27,17 +34,13 @@ module Mkalmykov
       def my_compact
         result = MyArray.new
 
-        for element in self
-          result << element unless element.nil?
-        end
+        my_each { |elem| result << elem unless elem.nil? }
         result
       end
 
       # Написать свою функцию my_reduce
       def my_reduce(accumulator = self[0])
-        my_each do |element|
-          accumulator = yield(accumulator, element)
-        end
+        my_each { |elem| accumulator = yield(accumulator, elem) }
         accumulator
       end
     end
