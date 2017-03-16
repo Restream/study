@@ -21,12 +21,7 @@ module Mkalmykov
 
         return mid if value == query
 
-        if value < query
-          from = mid + 1
-        elsif value > query
-          to = mid - 1
-        end
-
+        value < query ? from = mid + 1 : to = mid - 1
         binary_search(array, query, from, to)
       end
     end
