@@ -39,8 +39,16 @@ module Mkalmykov
       end
 
       # Написать свою функцию my_reduce
-      def my_reduce(accumulator = self[0])
-        my_each { |elem| accumulator = yield(accumulator, elem) }
+      def my_reduce(accumulator = nil)
+        i = 0
+        if accumulator.nil?
+          i = 1
+          accumulator = self[0]
+        end
+        while i < length
+          accumulator = yield(accumulator, self[i])
+          i += 1
+        end
         accumulator
       end
     end
