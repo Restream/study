@@ -7,23 +7,26 @@ module Mkalmykov
       end
 
       def search(array, query)
+        binary_search(array, query)
+      end
+
+      private
+
+      def binary_search(array, query, from = 0, to = array.length - 1)
         return -1 if array.empty?
 
-        left_edge = 0
-        right_edge = array.length
+        mid = (from + to) / 2
+        value = array[mid]
 
-        while right_edge - left_edge > 1
-          # Не учитываем явно случай, когда длина массива - нечетное число,
-          # потому что осуществляем целочисленное деление, и результат будет
-          # целым числом
-          mid = (left_edge + right_edge) / 2
-          if query < array[mid]
-            right_edge = mid
-          else
-            left_edge = mid
-          end
+        if to == from
+          query == array[from] ? from : -1
+        elsif value < query
+          binary_search(array, query, mid + 1, to)
+        elsif value > query
+          binary_search(array, query, from, mid - 1)
+        else
+          mid
         end
-        array[left_edge] == query ? left_edge : -1
       end
     end
   end
