@@ -3,7 +3,7 @@ module Mkalmykov
     class << self
       def replace(array)
         max_elem = array.max
-        array.map! { |elem| elem > 0 ? max_elem : elem }
+        array.map { |elem| elem > 0 ? max_elem : elem }
       end
 
       def search(array, query)
@@ -14,19 +14,20 @@ module Mkalmykov
 
       def binary_search(array, query, from = 0, to = array.length - 1)
         return -1 if array.empty?
+        return query == array[from] ? from : -1 if to == from
 
         mid = (from + to) / 2
         value = array[mid]
 
-        if to == from
-          query == array[from] ? from : -1
-        elsif value < query
-          binary_search(array, query, mid + 1, to)
+        return mid if value == query
+
+        if value < query
+          from = mid + 1
         elsif value > query
-          binary_search(array, query, from, mid - 1)
-        else
-          mid
+          to = mid - 1
         end
+
+        binary_search(array, query, from, to)
       end
     end
   end
