@@ -44,9 +44,11 @@ module Mkalmykov
         my_each do |elem|
           if i == 0 && accumulator.nil?
             accumulator = elem
+            i += 1
             next
           end
           accumulator = yield(accumulator, elem)
+          i += 1
         end
         accumulator
       end
