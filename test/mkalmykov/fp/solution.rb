@@ -9,8 +9,9 @@ module Mkalmykov
           !film['country'].nil? && film['country'].split(',').length >= 2 && !film['rating_kinopoisk'].to_f.zero?
         end
 
-        required_films.map { |film| film['rating_kinopoisk'].to_f }
-                      .reduce(:+) / required_films.length
+        summed_rating = required_films.map { |film| film['rating_kinopoisk'].to_f }
+                                      .reduce(:+)
+        summed_rating / required_films.length
       end
 
       def chars_count(films, threshold)
